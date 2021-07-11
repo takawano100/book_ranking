@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-6 offset-3">
+    <div style="float: left; padding: 0 20px 20px 0">
+        {% for picture in object.pictures_set.all %}
+            <img width="200px" height="300px" src={{ picture.picture.url }}>
+        {% endfor %}
+    </div>
+    <div>
+        <p>タイトル：　{{ object.title }}</p>
+        <p>著者：　{{ object.author }}</p>
+        <p>出版日：　{{ object.date_of_publication }}</p>
+    </div>
+</div>
+{% endblock %}
